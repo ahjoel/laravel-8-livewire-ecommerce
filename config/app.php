@@ -181,6 +181,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        \Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -197,6 +198,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
+
     ],
 
     /*
@@ -212,6 +214,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
     ])->toArray(),
 
 ];
