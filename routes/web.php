@@ -25,6 +25,10 @@ Route::get('/checkout', \App\Http\Livewire\CheckoutComponent::class);
 
 Route::get('/product/{slug}', \App\Http\Livewire\DetailComponent::class)->name('product.details');
 
+Route::get('/product-category/{category_slug}', \App\Http\Livewire\CategoryComponent::class)->name('product.category');
+
+Route::get('/search', \App\Http\Livewire\SearchComponent::class)->name('product.search');
+
 // For User or Customer
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard', \App\Http\Livewire\User\UserDashboardComponent::class)->name('user.dashboard');
