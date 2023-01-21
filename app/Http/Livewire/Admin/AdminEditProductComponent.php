@@ -51,6 +51,23 @@ class AdminEditProductComponent extends Component
         $this->slug = Str::slug($this->name, '-');
     }
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
+            'name' => 'required',
+            'slug' => 'required|unique:products',
+            'short_description' => 'required',
+            'description' => 'required',
+            'regular_price' => 'required|numeric',
+            'sale_price' => 'numeric',
+            'SKU' => 'required',
+            'stock_status' => 'required',
+            'quantity' => 'required',
+            'newimage' => 'required|mimes:jpeg,png',
+            'category_id' => 'required'
+        ]);
+    }
+
     public function updateProduct()
     {
         $product = Product::find($this->product_id);
@@ -64,7 +81,7 @@ class AdminEditProductComponent extends Component
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;
-        
+
         if ($this->newimage) {
             $imagesName = Carbon::now()->timestamp. '.' . $this->newimage->extension();
             $this->newimage->storeAs('products', $imagesName);
