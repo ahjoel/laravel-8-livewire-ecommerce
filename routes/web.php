@@ -21,13 +21,15 @@ Route::get('/shop', \App\Http\Livewire\ShopComponent::class);
 
 Route::get('/cart', \App\Http\Livewire\CartComponent::class)->name('product.cart');
 
-Route::get('/checkout', \App\Http\Livewire\CheckoutComponent::class);
+Route::get('/checkout', \App\Http\Livewire\CheckoutComponent::class)->name('checkout');
 
 Route::get('/product/{slug}', \App\Http\Livewire\DetailComponent::class)->name('product.details');
 
 Route::get('/product-category/{category_slug}', \App\Http\Livewire\CategoryComponent::class)->name('product.category');
 
 Route::get('/search', \App\Http\Livewire\SearchComponent::class)->name('product.search');
+
+Route::get('/thank-you', \App\Http\Livewire\ThankyouComponent::class)->name('thankyou');
 
 // For User or Customer
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
@@ -43,11 +45,11 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
     Route::get('/admin/products', \App\Http\Livewire\Admin\AdminProductComponent::class)->name('admin.products');
     Route::get('/admin/product/add', \App\Http\Livewire\Admin\AdminAddProductComponent::class)->name('admin.addproduct');
     Route::get('/admin/product/edit/{product_slug}', \App\Http\Livewire\Admin\AdminEditProductComponent::class)->name('admin.editproduct');
-    
+
     Route::get('/admin/slider', \App\Http\Livewire\Admin\AdminHomeSliderComponent::class)->name('admin.homeslider');
     Route::get('/admin/slider/add', \App\Http\Livewire\Admin\AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');
     Route::get('/admin/slider/edit/{slide_id}', \App\Http\Livewire\Admin\AdminEditHomeSliderComponent::class)->name('admin.edithomeslider');
-    
+
     Route::get('/admin/home-categories', \App\Http\Livewire\Admin\AdminHomeCategoryComponent::class)->name('admin.homecategories');
     Route::get('/admin/sale', \App\Http\Livewire\Admin\AdminSaleComponent::class)->name('admin.sale');
 });

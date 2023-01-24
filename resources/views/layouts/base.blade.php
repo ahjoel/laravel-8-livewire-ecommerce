@@ -146,21 +146,23 @@
                     @livewire('header-search-component')
 
                     <div class="wrap-icon right-section">
-                        <div class="wrap-icon-section wishlist">
+                        <!--<div class="wrap-icon-section wishlist">
                             <a href="#" class="link-direction">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <div class="left-info">
-                                    <span class="index">0 item</span>
+                                    @if(Cart::instance('whishlist')->count() > 0)
+                                        <span class="index">{{Cart::instance('whishlist')->count()}} item</span>
+                                    @endif
                                     <span class="title">Wishlist</span>
                                 </div>
                             </a>
-                        </div>
+                        </div>-->
                         <div class="wrap-icon-section minicart">
                             <a href="#" class="link-direction">
                                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                                 <div class="left-info">
-                                    @if(Cart::count() > 0)
-                                        <span class="index">{{Cart::count(false)}} items</span>
+                                    @if(Cart::instance('cart')->count() > 0)
+                                        <span class="index">{{Cart::instance('cart')->count()}} items</span>
                                     @endif
                                     <span class="title">CART</span>
                                 </div>
