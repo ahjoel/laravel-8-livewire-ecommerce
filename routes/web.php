@@ -34,6 +34,8 @@ Route::get('/thank-you', \App\Http\Livewire\ThankyouComponent::class)->name('tha
 // For User or Customer
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard', \App\Http\Livewire\User\UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/orders', \App\Http\Livewire\User\UserOrdersComponent::class)->name('user.orders');
+    Route::get('/user/orders/{order_id}', \App\Http\Livewire\User\UserOrderDetailsComponent::class)->name('user.orderdetails');
 });
 
 // For Admin
@@ -52,4 +54,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
 
     Route::get('/admin/home-categories', \App\Http\Livewire\Admin\AdminHomeCategoryComponent::class)->name('admin.homecategories');
     Route::get('/admin/sale', \App\Http\Livewire\Admin\AdminSaleComponent::class)->name('admin.sale');
+
+    Route::get('/admin/orders', \App\Http\Livewire\Admin\AdminOrderComponent::class)->name('admin.orders');
+    Route::get('/admin/orders/{order_id}', \App\Http\Livewire\Admin\AdminOrderDetailsComponent::class)->name('admin.orderdetails');
 });
