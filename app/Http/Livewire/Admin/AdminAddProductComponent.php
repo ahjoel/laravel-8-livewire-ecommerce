@@ -81,18 +81,18 @@ class AdminAddProductComponent extends Component
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;
 
-        $imagesName = Carbon::now()->timestamp. '.' . $this->image->extension();
-        $this->image->storeAs('products', $imagesName);
-        $product->image = $imagesName;
+        $imageName = Carbon::now()->timestamp. '.' . $this->image->extension();
+        $this->image->storeAs('products', $imageName);
+        $product->image = $imageName;
 
         if ($this->images) 
         {
             $imagesname = '';
             foreach ($this->images as $key=>$image) 
             {
-                $imgName =  Carbon::now()->timestamp. '.' . $this->image->extension();
+                $imgName =  Carbon::now()->timestamp. $key. '.' . $this->image->extension();
                 $image->storeAs('products', $imgName);
-                $imagesname = $imagesname . ',' . $imagesName;
+                $imagesname = $imagesname . ',' . $imgName;
             }
             $product->images = $imagesname;
         }

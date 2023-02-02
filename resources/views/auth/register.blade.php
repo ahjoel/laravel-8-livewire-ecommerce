@@ -1,5 +1,5 @@
 
-<x-guest-layout>
+<x-base-layout>
     <!--main area-->
     <main id="main" class="main-site left-sidebar">
 
@@ -55,4 +55,4 @@
 
     </main>
     <!--main area-->
-</x-guest-layout>
+</x-base-layout>
