@@ -183,7 +183,7 @@
             <div class="wrap-back-link">
                 <div class="container">
                     <div class="back-link-box">
-                        <h3 class="backlink-title">Quick Links</h3>
+                        <!-- <h3 class="backlink-title">Quick Links</h3>
                         <div class="back-link-row">
                             <ul class="list-back-link" >
                                 <li><span class="row-title">Mobiles:</span></li>
@@ -225,7 +225,7 @@
                                 <li><a href="#" class="redirect-back-link" title="Women Watches" >Women Watches</a></li>
                             </ul>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -235,7 +235,7 @@
         <div class="coppy-right-box">
             <div class="container">
                 <div class="coppy-right-item item-left">
-                    <p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+                    <p class="coppy-right-text">Copyright © 2023 All rights reserved</p>
                 </div>
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">

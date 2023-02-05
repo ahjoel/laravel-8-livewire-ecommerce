@@ -49,7 +49,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{$categories->links()}}
+                        <div>{{$categories->links('pagination::tailwind')}}</div>
                     </div>
                 </div>
             </div>
